@@ -82,11 +82,13 @@ public class MessageReader extends Thread {
                     str = "";
                     SwingUtilities.invokeLater(new Runnable() {
                         public void run() {
-                            String[] strings = writeString.split("#");
-                            String fileNameStrings = strings[0].substring(2);
-                            connection.getWindow().getDebugTextArea().append(strings[1]);
-                            connection.getWindow().setImage(fileNameStrings);
-                        } 
+                            String[] commandResponse = writeString.split("::");
+                            String[] strings = commandResponse[1].split("#");
+
+                            if (commandResponse[0].equalsIgnoreCase("dances")) {
+                                connection.getWindow().setDances(strings);
+                            }
+                        }
                     });
                 }
             }

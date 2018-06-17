@@ -22,12 +22,12 @@ process_command(Stream, get_dance(Dance_Type), C):-
     C1 is C + 1,
     process_text(Stream, C1).
 
-process_command(Stream, 'list_dances', C):-
-    findall(Title, dance(Dance, Description, Title), Dances),
-    print('test'),
-    format(Stream, '~p#~p#~p#~p#~p#~p#~p#~p#~p#~p#~p#~p#~p#~p#~p#~p#~p#', Dances),
-    print('test2'),
-    flush_output(Stream).
+process_command(Stream, get_dances, C):-
+    findall(Title, dance(Dance, Desc, Title), Dances),
+    format(Stream, 'dances::~s#~s#~s#~s#~s#~s#~s#~s#~s#~s#~s#~s#~s#~s#~s#~s#~s\n', Dances),
+    flush_output(Stream),
+    C1 is C + 1,
+    process_text(Stream, C1).
 
 dance(salsa, 'descriere Salsa', 'Salsa').
 dance(tango, 'descriere Tango', 'Tango').

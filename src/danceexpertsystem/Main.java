@@ -36,8 +36,8 @@ public class Main {
             window.addWindowListener(new WindowAdapter() {
                 public void windowClosing(WindowEvent e) {
                     try {
-                        window.conexiune.stopPrologProcess();
-                        window.conexiune.sender.done = true;
+                        window.connection.stopPrologProcess();
+                        window.connection.sender.done = true;
                     } catch (InterruptedException ex) {
                         Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
                     }

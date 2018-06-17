@@ -5,18 +5,6 @@
  */
 package danceexpertsystem;
 
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.PipedOutputStream;
-import java.io.PrintStream;
-import static java.lang.Integer.parseInt;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.imageio.ImageIO;
-import javax.swing.BoxLayout;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
-
 /**
  *
  * @author Irina
@@ -28,12 +16,12 @@ public class Window extends javax.swing.JFrame {
      *
      * @param titlu
      */
-    PrologConnexion conexiune;
-
+    PrologConnexion connection;
+    
     public Window(String title) {
         super(title);
         initComponents();
-
+        
     }
 
     /**
@@ -47,109 +35,13 @@ public class Window extends javax.swing.JFrame {
 
         grupBtn = new javax.swing.ButtonGroup();
         jSeparator1 = new javax.swing.JSeparator();
-        tfParametru = new javax.swing.JTextField();
-        okButton = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        textAreaDebug = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        tfParametru4 = new javax.swing.JTextField();
-        tfParametru5 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jButton3 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        dancesComboBox = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        tfParametru.addActionListener(new java.awt.event.ActionListener() {
+        dancesComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfParametruActionPerformed(evt);
-            }
-        });
-
-        okButton.setText("Ok");
-        okButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                okButtonActionPerformed(evt);
-            }
-        });
-
-        textAreaDebug.setColumns(20);
-        textAreaDebug.setRows(5);
-        jScrollPane1.setViewportView(textAreaDebug);
-
-        jButton1.setText("Salut");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "+", "-" }));
-        jComboBox1.setSelectedIndex(1);
-        jComboBox1.setToolTipText("");
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
-            }
-        });
-
-        tfParametru4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfParametru4ActionPerformed(evt);
-            }
-        });
-
-        tfParametru5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfParametru5ActionPerformed(evt);
-            }
-        });
-
-        jButton2.setText("jButton2");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
-        jScrollPane2.setViewportView(jPanel1);
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 313, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 173, Short.MAX_VALUE)
-        );
-
-        jButton3.setText("jButton3");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                dancesComboBoxActionPerformed(evt);
             }
         });
 
@@ -158,197 +50,24 @@ public class Window extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(tfParametru)
-                .addGap(18, 18, 18)
-                .addComponent(okButton)
-                .addGap(18, 18, 18)
-                .addComponent(jButton1)
-                .addGap(18, 18, 18)
-                .addComponent(tfParametru4, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton3))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(39, 39, 39)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton2)
-                                    .addComponent(tfParametru5, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(116, 116, 116))
+                .addContainerGap()
+                .addComponent(dancesComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(586, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(tfParametru, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(okButton)
-                            .addComponent(jButton1)
-                            .addComponent(tfParametru4, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(27, 27, 27)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(tfParametru5, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton2))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(30, 30, 30)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(54, 54, 54)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jButton3)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(155, 155, 155)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(94, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(dancesComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(448, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tfParametruActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfParametruActionPerformed
+    private void dancesComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dancesComboBoxActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tfParametruActionPerformed
-
-    private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
-        //okButton.setEnabled(false);
-        String valoareParametru = tfParametru.getText() + jComboBox1.getSelectedItem() + tfParametru4.getText();
-
-//       int x = parseInt(tfParametru.getText());
-//       int y = parseInt(tfParametru4.getText());
-//       tfParametru4.setText("");
-//       
-//       if(jComboBox1.getSelectedItem() == "-")
-//       {
-//           int expression = x - y;
-//           tfParametru5.setText(expression.);
-//       }
-//       else{
-//            int expression = x + y;
-//           tfParametru5.setText(expression);
-//       }
-        try {
-            conexiune.sender.sendMessage(valoareParametru);
-
-        } catch (Exception ex) {
-            Logger.getLogger(Window.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_okButtonActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        try {
-            // TODO add your handling code here:
-            PipedOutputStream pos = conexiune.sender.getPipedOutputStream();
-            PrintStream ps = new PrintStream(pos);
-            ps.println("salut.");
-            ps.flush();
-        } catch (InterruptedException ex) {
-            Logger.getLogger(Window.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        //okButton.setEnabled(false);
-        String valoareParametru = tfParametru.getText();
-        //tfParametru.setText("");
-        try {
-            conexiune.sender.sendMessage(valoareParametru);
-        } catch (Exception ex) {
-            Logger.getLogger(Window.class.getName()).log(Level.SEVERE, null, ex);
-        }        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
-
-    private void tfParametru4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfParametru4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tfParametru4ActionPerformed
-
-    private void tfParametru5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfParametru5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tfParametru5ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-
-        String valoareParametru = tfParametru.getText() + jComboBox1.getSelectedItem() + tfParametru4.getText();
-
-//            jPanel2.add(buttonPanel);
-        // jScrollPane2.getViewport().setLayout(new FlowLayout(FlowLayout.CENTER));
-        tfParametru5.setText(valoareParametru);
-        // JLabel lala = new JLabel();
-        // jPanel1.add(lala);
-
-        // JLabel lab1 = new JLabel("User Name", JLabel.LEFT);
-        // jPanel1.setLayout(new FlowLayout()); 
-        //  jPanel1.add(lab1 = new JLabel("add JLabel"));
-        // add( jPanel1);
-        if (jComboBox1.getSelectedItem() == "+") {
-            int x = parseInt(tfParametru.getText());
-            int y = parseInt(tfParametru4.getText());
-            int z = x + y;
-            // TextField text1 = new TextField("<html><font color='red'>valoareParametru</font></html>");
-            //  JLabel lab1 = new JLabel("<html><font color='red'>valoareParametru</font></html>");
-            jPanel1.setLayout(new BoxLayout(jPanel1, BoxLayout.PAGE_AXIS));
-            jPanel1.add(new JLabel("<html><font color='red'>" + valoareParametru + "=" + z + "<br></font></html>"));
-
-        } else {
-            int x = parseInt(tfParametru.getText());
-            int y = parseInt(tfParametru4.getText());
-            int z = x - y;
-            // JLabel lab1 = new JLabel("<html><font color='blue'>valoareParametru</font></html>");
-            jPanel1.setLayout(new BoxLayout(jPanel1, BoxLayout.PAGE_AXIS));
-            jPanel1.add(new JLabel("<html><font color='blue'>" + valoareParametru + "=" + z + "<br></font></html>"));
-
-        }
-        jScrollPane2.repaint();
-        jScrollPane2.revalidate();
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-        jPanel2.setLayout(new BoxLayout(jPanel2, BoxLayout.PAGE_AXIS));
-        try {
-            conexiune.sender.sendMessage("list_dances");
-        } catch (Exception ex) {
-
-        }
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    public void setImage(String caleaVietii) {
-        try {
-            BufferedImage img = ImageIO.read(new File(caleaVietii));
-            JLabel label = new JLabel(new ImageIcon(img));
-            jPanel2.add(label);
-            jPanel2.repaint();
-            jPanel2.revalidate();
-        } catch (Exception ex) {
-            System.out.println(ex.getMessage());
-        }
-    }
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_dancesComboBoxActionPerformed
 
     /**
      * @param args the command line arguments
@@ -385,32 +104,21 @@ public class Window extends javax.swing.JFrame {
             }
         });
     }
-
-    public javax.swing.JTextArea getDebugTextArea() {
-        return textAreaDebug;
+    
+    public void setDances(String[] dances) {
+        for (String dance : dances) {
+            this.dancesComboBox.addItem(dance);
+        }
     }
-
-    public void setConexiune(PrologConnexion _conexiune) {
-        conexiune = _conexiune;
+    
+    public void setConexiune(PrologConnexion _connection) throws Exception {
+        connection = _connection;
+        connection.sender.sendMessage("get_dances");
     }
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> dancesComboBox;
     private javax.swing.ButtonGroup grupBtn;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JButton okButton;
-    private javax.swing.JTextArea textAreaDebug;
-    private javax.swing.JTextField tfParametru;
-    private javax.swing.JTextField tfParametru4;
-    private javax.swing.JTextField tfParametru5;
     // End of variables declaration//GEN-END:variables
 }
