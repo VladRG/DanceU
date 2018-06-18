@@ -88,6 +88,34 @@ public class MessageReader extends Thread {
                             if (commandResponse[0].equalsIgnoreCase("dances")) {
                                 connection.getWindow().setDances(strings);
                             }
+
+                            if (commandResponse[0].equalsIgnoreCase("personality_types")) {
+                                connection.getWindow().setPersonalityTypes(strings);
+                            }
+
+                            if (commandResponse[0].equalsIgnoreCase("health_statuses")) {
+                                connection.getWindow().setHealthStatuses(strings);
+                            }
+
+                            if (commandResponse[0].equalsIgnoreCase("budgets")) {
+                                connection.getWindow().setBudgets(strings);
+                            }
+
+                            if (commandResponse[0].equalsIgnoreCase("availabilities")) {
+                                connection.getWindow().setAvailabilities(strings);
+                            }
+
+                            if (commandResponse[0].equalsIgnoreCase("ages")) {
+                                connection.getWindow().setAges(strings);
+                            }
+
+                            if (commandResponse[0].equalsIgnoreCase("rythms")) {
+                                connection.getWindow().setRythms(strings);
+                            }
+
+                            if (commandResponse[0].equalsIgnoreCase("purposes")) {
+                                connection.getWindow().setPurposes(strings);
+                            }
                         }
                     });
                 }

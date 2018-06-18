@@ -17,11 +17,11 @@ public class Window extends javax.swing.JFrame {
      * @param titlu
      */
     PrologConnexion connection;
-    
+
     public Window(String title) {
         super(title);
         initComponents();
-        
+
     }
 
     /**
@@ -36,6 +36,26 @@ public class Window extends javax.swing.JFrame {
         grupBtn = new javax.swing.ButtonGroup();
         jSeparator1 = new javax.swing.JSeparator();
         dancesComboBox = new javax.swing.JComboBox<>();
+        healthComboBox = new javax.swing.JComboBox<>();
+        budgetComboBox = new javax.swing.JComboBox<>();
+        personalityComboBox = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        ageComboBox = new javax.swing.JComboBox<>();
+        rythmComboBox = new javax.swing.JComboBox<>();
+        availabilityComboBox = new javax.swing.JComboBox<>();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        purposesComboBox = new javax.swing.JComboBox<>();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        ageComboBox1 = new javax.swing.JComboBox<>();
+        rythmComboBox1 = new javax.swing.JComboBox<>();
+        availabilityComboBox1 = new javax.swing.JComboBox<>();
+        jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -45,21 +65,183 @@ public class Window extends javax.swing.JFrame {
             }
         });
 
+        healthComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ignora" }));
+        healthComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                healthComboBoxActionPerformed(evt);
+            }
+        });
+
+        budgetComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ignora" }));
+        budgetComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                budgetComboBoxActionPerformed(evt);
+            }
+        });
+
+        personalityComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ignora" }));
+        personalityComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                personalityComboBoxActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Stare sanatate");
+
+        jLabel2.setText("Personalitate");
+
+        jLabel3.setText("Buget");
+
+        ageComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ignora" }));
+        ageComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ageComboBoxActionPerformed(evt);
+            }
+        });
+
+        rythmComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ignora" }));
+        rythmComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rythmComboBoxActionPerformed(evt);
+            }
+        });
+
+        availabilityComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ignora" }));
+        availabilityComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                availabilityComboBoxActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setText("Varsta");
+
+        jLabel5.setText("Disponibilitate");
+
+        jLabel6.setText("Ritm");
+
+        purposesComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ignora" }));
+        purposesComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                purposesComboBoxActionPerformed(evt);
+            }
+        });
+
+        jLabel7.setText("Scop");
+
+        jLabel8.setText("Pasionat de dans");
+
+        jLabel9.setText("Optimist");
+
+        ageComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ignora", "Da", "Nu" }));
+        ageComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ageComboBox1ActionPerformed(evt);
+            }
+        });
+
+        rythmComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ignora", "Da", "Nu" }));
+        rythmComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rythmComboBox1ActionPerformed(evt);
+            }
+        });
+
+        availabilityComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ignora", "Da", "Nu" }));
+        availabilityComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                availabilityComboBox1ActionPerformed(evt);
+            }
+        });
+
+        jLabel10.setText("Experienta");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(dancesComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(586, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(personalityComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(31, 31, 31)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(healthComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(32, 32, 32)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(budgetComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(availabilityComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(31, 31, 31)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ageComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(dancesComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(32, 32, 32)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(rythmComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(purposesComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(availabilityComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(31, 31, 31)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ageComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(32, 32, 32)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(rythmComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addComponent(jLabel7)
+                .addGap(4, 4, 4)
+                .addComponent(purposesComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(personalityComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(healthComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(budgetComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel6))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(availabilityComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ageComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rythmComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel9))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(availabilityComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ageComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rythmComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 181, Short.MAX_VALUE)
                 .addComponent(dancesComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(448, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
@@ -68,6 +250,46 @@ public class Window extends javax.swing.JFrame {
     private void dancesComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dancesComboBoxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_dancesComboBoxActionPerformed
+
+    private void healthComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_healthComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_healthComboBoxActionPerformed
+
+    private void budgetComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_budgetComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_budgetComboBoxActionPerformed
+
+    private void personalityComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_personalityComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_personalityComboBoxActionPerformed
+
+    private void ageComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ageComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ageComboBoxActionPerformed
+
+    private void rythmComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rythmComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rythmComboBoxActionPerformed
+
+    private void availabilityComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_availabilityComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_availabilityComboBoxActionPerformed
+
+    private void purposesComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_purposesComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_purposesComboBoxActionPerformed
+
+    private void ageComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ageComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ageComboBox1ActionPerformed
+
+    private void rythmComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rythmComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rythmComboBox1ActionPerformed
+
+    private void availabilityComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_availabilityComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_availabilityComboBox1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -104,21 +326,90 @@ public class Window extends javax.swing.JFrame {
             }
         });
     }
-    
+
     public void setDances(String[] dances) {
         for (String dance : dances) {
             this.dancesComboBox.addItem(dance);
         }
     }
-    
+
+    public void setPersonalityTypes(String[] personalityTypes) {
+        for (String type : personalityTypes) {
+            this.personalityComboBox.addItem(type);
+        }
+    }
+
+    public void setHealthStatuses(String[] statuses) {
+        for (String type : statuses) {
+            this.healthComboBox.addItem(type);
+        }
+    }
+
+    public void setBudgets(String[] budgets) {
+        for (String type : budgets) {
+            this.budgetComboBox.addItem(type);
+        }
+    }
+
+    public void setAvailabilities(String[] types) {
+        for (String type : types) {
+            this.availabilityComboBox.addItem(type);
+        }
+    }
+
+    public void setAges(String[] types) {
+        for (String type : types) {
+            this.ageComboBox.addItem(type);
+        }
+    }
+
+    public void setRythms(String[] types) {
+        for (String type : types) {
+            this.rythmComboBox.addItem(type);
+        }
+    }
+
+    public void setPurposes(String[] types) {
+        for (String type : types) {
+            this.purposesComboBox.addItem(type);
+        }
+    }
+
     public void setConexiune(PrologConnexion _connection) throws Exception {
         connection = _connection;
         connection.sender.sendMessage("get_dances");
+        connection.sender.sendMessage("get_personality_types");
+        connection.sender.sendMessage("get_health_statuses");
+        connection.sender.sendMessage("get_budgets");
+        connection.sender.sendMessage("get_availabilities");
+        connection.sender.sendMessage("get_ages");
+        connection.sender.sendMessage("get_rythms");
+        connection.sender.sendMessage("get_purposes");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> ageComboBox;
+    private javax.swing.JComboBox<String> ageComboBox1;
+    private javax.swing.JComboBox<String> availabilityComboBox;
+    private javax.swing.JComboBox<String> availabilityComboBox1;
+    private javax.swing.JComboBox<String> budgetComboBox;
     private javax.swing.JComboBox<String> dancesComboBox;
     private javax.swing.ButtonGroup grupBtn;
+    private javax.swing.JComboBox<String> healthComboBox;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JComboBox<String> personalityComboBox;
+    private javax.swing.JComboBox<String> purposesComboBox;
+    private javax.swing.JComboBox<String> rythmComboBox;
+    private javax.swing.JComboBox<String> rythmComboBox1;
     // End of variables declaration//GEN-END:variables
 }
